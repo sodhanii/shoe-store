@@ -1,0 +1,2 @@
+module StoreInventoriesHelper
+end
