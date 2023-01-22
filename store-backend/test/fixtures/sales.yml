@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  quantity: 1
+  model: one
+  store: one
+  sale_time: 2023-01-22 14:13:44
+
+two:
+  quantity: 1
+  model: two
+  store: two
+  sale_time: 2023-01-22 14:13:44

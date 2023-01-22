@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_22_180105) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_22_191344) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -20,8 +20,19 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_22_180105) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "sales", force: :cascade do |t|
+    t.integer "quantity", default: 0
+    t.datetime "sale_time", default: -> { "CURRENT_TIMESTAMP" }
+    t.bigint "model_id", null: false
+    t.bigint "store_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["model_id"], name: "index_sales_on_model_id"
+    t.index ["store_id"], name: "index_sales_on_store_id"
+  end
+
   create_table "store_inventories", force: :cascade do |t|
-    t.integer "quantity"
+    t.integer "quantity", default: 0
     t.bigint "store_id", null: false
     t.bigint "model_id", null: false
     t.datetime "created_at", null: false
@@ -37,6 +48,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_22_180105) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "sales", "models"
+  add_foreign_key "sales", "stores"
   add_foreign_key "store_inventories", "models"
   add_foreign_key "store_inventories", "stores"
 end
