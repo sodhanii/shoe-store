@@ -7,6 +7,10 @@ class SalesController < ApplicationController
     @sales = Sale.all
   end
 
+  def history
+    ActionCable.server.broadcast "sales_channel", { data: sales_history }
+  end
+
   # GET /sales/1
   # GET /sales/1.json
   def show
