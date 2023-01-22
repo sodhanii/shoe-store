@@ -1,0 +1,1 @@
+export const ACTION_CABLE_URL = 'ws://localhost:3000/cable';
