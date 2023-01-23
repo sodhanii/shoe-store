@@ -5,9 +5,6 @@
 ### Client
 
 - [React](https://pt-br.reactjs.org/)
-- [Create React App](https://create-react-app.dev/)
-- [MUI - Material UI - React](https://mui.com)
-- [Plotly React](https://plotly.com/javascript/react/)
 
 ### Server
 
