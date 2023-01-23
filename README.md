@@ -7,7 +7,7 @@
 - [React](https://pt-br.reactjs.org/)
 - [Create React App](https://create-react-app.dev/)
 - [MUI - Material UI - React](https://mui.com)
-- [Plotly Read](httpshttps://plotly.com/javascript/react/)
+- [Plotly Read](https://plotly.com/javascript/react/)
 
 ### Server
 
@@ -33,7 +33,7 @@
 
 1. Install and setup the requirements
 
-2. If your Redis contains password, or is setup in a different port than _6379_, you should replace on : <blockquote>shoe-store-server/config/cable.yml</blockquote>. Start redis server using the command below:
+2. If your Redis contains password, or is setup in a different port than _6379_, you should replace on : <blockquote>store-backend/config/cable.yml</blockquote>. Start redis server using the command below:
 
 ```
   redis-server
