@@ -4,7 +4,7 @@
 
 ### Client
 
-- [React](https://pt-br.reactjs.org/)
+- [React](https://reactjs.org/)
 
 ### Server
 
