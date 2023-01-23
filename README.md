@@ -96,7 +96,6 @@
 ## Future improvements
 
 - Setup project in a docker structure to get easier to manage environments, scale, and setup cross-env.
-- Setup a better scale process for syncing inventory suggestions data.
 - Setup advanced generic UI components to make maintenance and A/B tests easier.
 - Transfer the box styling of Material UI from JSX into style files in a styled-components structure.
 - Unit & Integrations testing.
