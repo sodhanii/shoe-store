@@ -21,6 +21,7 @@ module StoreBackend
 
     config.after_initialize do
       ReadInventoryDataJob.perform_now
+      BroadcastUpdateJob.perform_now
     end
 
 
