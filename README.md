@@ -95,22 +95,11 @@
 
 ## Future improvements
 
-### Tech side
-
 - Setup project in a docker structure to get easier to manage environments, scale, and setup cross-env.
 - Setup a better scale process for syncing inventory suggestions data.
 - Setup advanced generic UI components to make maintenance and A/B tests easier.
 - Transfer the box styling of Material UI from JSX into style files in a styled-components structure.
 - Unit & Integrations testing.
-
-### Product side
-
-- Include search in the Dashboard page, searching for content types.
-- Include search in the Stores & Models pages, searching for general data.
-- Include an option for the user to switch between tables and cards in the stores & products views.
-- The totalizers in the Dashboard(like sales amount, total stores) shall show secondary information, which displays how much the information increased or decreased in the latest minutes.
-- Apply animations on the initial dashboard render by not displaying all data at once, resulting in better UX.
-- Discussion with the Product Team to decide which data display is better for making real-time decisions.
 
 <br /><br /><br />
 
