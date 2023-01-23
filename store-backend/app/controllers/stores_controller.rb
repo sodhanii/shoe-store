@@ -4,8 +4,17 @@ class StoresController < ApplicationController
   # GET /stores
   # GET /stores.json
   def index
-    # @stores = Store.all
-    Store.broadcast_data
+
+    @stores = Store.joins('LEFT OUTER JOIN store_inventories ON store_inventories.store_id = stores.id')
+              .select(
+                  'stores.id',
+                  'stores.name',
+                  'stores.sales',
+                  'sum(case when (store_inventories.quantity <= 10) then 1 else 0 end) as low_products'
+              )
+              .group('stores.id, stores.name, stores.sales')
+              .order("low_products DESC")
+
   end
 
   # GET /stores/1

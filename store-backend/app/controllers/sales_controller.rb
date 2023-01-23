@@ -8,7 +8,14 @@ class SalesController < ApplicationController
   end
 
   def history
-    ActionCable.server.broadcast "sales_channel", { data: sales_history }
+
+    @history = Sale
+              .order(Arel.sql("date_trunc('minute', sale_time)"))
+              .group(Arel.sql("date_trunc('minute', sale_time)"))
+              .select(Arel.sql("date_trunc('minute', sale_time) as time, sum(quantity) as qty"))
+
+    render json: @history, status: 200
+
   end
 
   # GET /sales/1

@@ -4,7 +4,35 @@ class StoreInventoriesController < ApplicationController
   # GET /store_inventories
   # GET /store_inventories.json
   def index
-    @store_inventories = StoreInventory.all
+
+    @store_inventories = StoreInventory.joins(:model, :store).select(
+      'store_inventories.id as id',
+      'stores.name as store_name',
+      'models.name as product_name',
+      'store_id',
+      'model_id',
+      'quantity'
+    )
+
+    if params.has_key?(:store_id) 
+      @store_inventories = @store_inventories.where(:store_id => params[:store_id])
+    end
+
+    if params.has_key?(:model_id) 
+      @store_inventories = @store_inventories.where(:model_id => params[:model_id])
+    end
+
+    if params.has_key?(:order) && params[:order] == 'desc'
+      @store_inventories = @store_inventories.order(quantity: :desc)
+    else
+      @store_inventories = @store_inventories.order(:quantity)
+    end
+
+    if params.has_key?(:limit) && params[:limit].to_i > 0
+      @store_inventories = @store_inventories.limit(params[:limit].to_i)
+    end
+
+
   end
 
   # GET /store_inventories/1

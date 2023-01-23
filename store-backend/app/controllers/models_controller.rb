@@ -4,8 +4,7 @@ class ModelsController < ApplicationController
   # GET /models
   # GET /models.json
   def index
-    # @models = Model.all
-    Model.broadcast_data
+    @models = Model.order(sales: :desc)
   end
 
   # GET /models/1
