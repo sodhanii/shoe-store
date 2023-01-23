@@ -64,7 +64,6 @@ function Models(props) {
         filter: false,
         selectToolbarPlacement: 'none',
         elevation: 0,
-        filterType: false,
         fixedSelectColumn: false,
         pagination: false,
         search: false,
