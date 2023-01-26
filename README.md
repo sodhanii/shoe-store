@@ -39,9 +39,7 @@
 3. In the main folder, setup websocketd:
 
 ```
-  cd bin
   websocketd --port=8080 ruby inventory.rb
-
 ```
 
 4. In the subfolder of server, install the dependencies and start the server
